@@ -1,0 +1,176 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+/* Purple/pink pulsing gradient */
+.landing-body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  color: #ece8e1;
+}
+
+.landing-body::before {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  background: radial-gradient(circle at 0% 0%, #ff6ea6 0, transparent 40%),
+              radial-gradient(circle at 100% 0%, #9c6bff 0, transparent 45%),
+              radial-gradient(circle at 50% 100%, #ff4655 0, #05080c 60%);
+  animation: pulseGradient 14s ease-in-out infinite;
+  z-index: -1;
+}
+
+@keyframes pulseGradient {
+  0%, 100% { transform: scale(1); filter: blur(0); }
+  50% { transform: scale(1.1); filter: blur(2px); }
+}
+
+.landing-wrapper {
+  width: 100%;
+  max-width: 480px;
+  padding: 20px;
+}
+
+.landing-card {
+  background: rgba(10, 16, 24, 0.96);
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6);
+  padding: 20px 18px 18px;
+  text-align: center;
+}
+
+.landing-tag {
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  color: #ffb2c4;
+}
+
+.landing-card h1 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 2.2rem;
+  letter-spacing: 0.16em;
+  margin-top: 6px;
+}
+
+.landing-text {
+  margin-top: 6px;
+  font-size: 0.95rem;
+  color: #c3c9d4;
+}
+
+.cake-area {
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.cake-outer {
+  width: 96px;
+  height: 96px;
+  border-radius: 30px;
+  padding: 6px;
+  background: radial-gradient(circle at 20% 0%, #ffe9b0 0, #ff7b9d 45%, #5d1230 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 30px rgba(255, 99, 154, 0.8);
+  position: relative;
+  overflow: hidden;
+}
+
+.cake-outer::after {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  border-radius: 24px;
+  border: 2px solid rgba(0, 0, 0, 0.4);
+}
+
+.cake {
+  font-size: 2.2rem;
+  z-index: 1;
+}
+
+.progress-wrap {
+  width: 100%;
+  max-width: 320px;
+  height: 10px;
+  background: rgba(3, 6, 10, 0.9);
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  overflow: hidden;
+}
+
+.progress-bar {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, #ff4655, #ffe66d);
+}
+
+.defuse-btn {
+  margin-top: 16px;
+  padding: 10px 22px;
+  border-radius: 999px;
+  border: none;
+  background: #ff4655;
+  color: #05080c;
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: transform 0.08s ease, box-shadow 0.08s ease, background 0.08s ease;
+}
+
+.defuse-btn:active {
+  transform: translateY(1px);
+  box-shadow: none;
+  background: #ff7281;
+}
+
+.status-line {
+  margin-top: 10px;
+  font-size: 0.86rem;
+  color: #ffccd5;
+}
+
+.timer-line {
+  margin-top: 4px;
+  font-size: 0.8rem;
+  color: #9ba4b3;
+}
+
+.landing-body.fade-out,
+.landing-body.fade-out::before {
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  opacity: 0;
+  transform: scale(1.05);
+}
+
+@keyframes cakeExplode {
+  0% { transform: scale(1) rotate(0deg); opacity: 1; }
+  20% { transform: scale(1.2) rotate(10deg); }
+  60% { transform: scale(0.9) rotate(-15deg); }
+  80% { transform: scale(1.6) rotate(25deg); opacity: 0.7; }
+  100% { transform: scale(0) rotate(45deg); opacity: 0; }
+}
+
+.cake-outer.explode {
+  animation: cakeExplode 0.6s ease-out forwards;
+  filter: brightness(2);
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Defuse the Birthday Cake</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="landing-body">
+
+  <div class="landing-wrapper">
+    <div class="landing-card">
+      <div class="landing-tag">Valorant // Clutch Moment</div>
+      <h1>Defuse the Birthday Cake</h1>
+      <p class="landing-text">
+        Hold the button to defuse the cake. Whiff it and the round (and page) resets.
+      </p>
+
+      <div class="cake-area">
+        <div class="cake-outer">
+          <div class="cake">🎂</div>
+        </div>
+        <div class="progress-wrap">
+          <div class="progress-bar" id="progress-bar"></div>
+        </div>
+      </div>
+
+      <button id="defuse-btn" class="defuse-btn">Hold to Defuse</button>
+      <p id="status-line" class="status-line">
+        Ticking away… you better not throw this clutch.
+      </p>
+      <div class="timer-line">
+        <span id="timer-label">00.00 / 04.00</span>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

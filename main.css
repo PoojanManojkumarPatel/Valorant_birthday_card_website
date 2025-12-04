@@ -1,0 +1,271 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main-body {
+  min-height: 100vh;
+  font-family: "Inter", system-ui, sans-serif;
+  color: #ece8e1;
+  background: radial-gradient(circle at top left, #ff6ea6 0, #0f1923 45%, #05080c 100%);
+}
+
+.page-shell {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 24px 16px 40px;
+}
+
+/* Hero */
+
+.hero {
+  padding: 16px 18px 18px;
+  border-radius: 18px;
+  background: rgba(10, 16, 24, 0.96);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  margin-bottom: 18px;
+}
+
+.hero-tag {
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 0.18em;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  color: #ffb3c5;
+}
+
+.hero h1 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 2.5rem;
+  letter-spacing: 0.18em;
+  margin-top: 4px;
+}
+
+.hero-sub {
+  margin-top: 6px;
+  font-size: 0.95rem;
+  color: #c0c7d2;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.pill-purple {
+  background: rgba(165, 105, 255, 0.18);
+}
+
+.pill-gold {
+  background: rgba(255, 200, 80, 0.18);
+}
+
+.hero-badges {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.badge {
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  font-size: 0.78rem;
+}
+
+/* Main grid */
+
+.main-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1.1fr;
+  grid-template-rows: auto auto;
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.panel {
+  background: rgba(15, 23, 35, 0.96);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 14px 14px 16px;
+}
+
+.panel h2 {
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  color: #ffb3c5;
+  margin-bottom: 8px;
+}
+
+.panel-agent {
+  grid-row: 1 / 2;
+}
+
+.panel-abilities {
+  grid-row: 1 / 2;
+}
+
+.panel-memories {
+  grid-column: 1 / 3;
+}
+
+.panel-letter {
+  grid-column: 1 / 3;
+}
+
+.agent-list {
+  list-style: none;
+  margin-top: 6px;
+  font-size: 0.9rem;
+  color: #d0d4dc;
+  line-height: 1.5;
+}
+
+.agent-list li + li {
+  margin-top: 4px;
+}
+
+.agent-list li::before {
+  content: "• ";
+  color: #ff4655;
+}
+
+.spray-box {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 12px;
+  background: rgba(5, 8, 12, 0.98);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  text-align: center;
+  font-size: 0.86rem;
+  color: #b7becb;
+}
+
+.spray-box img {
+  max-width: 80px;
+  display: block;
+  margin: 0 auto 6px;
+}
+
+/* Abilities */
+
+.light-text {
+  font-size: 0.86rem;
+  color: #a5adba;
+  margin-bottom: 8px;
+}
+
+.ability-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.ability-card {
+  background: rgba(7, 11, 17, 0.96);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 8px 8px 9px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+
+.ability-card.active {
+  border-color: #ff4655;
+  box-shadow: 0 0 16px rgba(255, 70, 85, 0.4);
+}
+
+.ability-short {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #ffb3c5;
+}
+
+.ability-name {
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 0.13em;
+  font-size: 1.2rem;
+  color:rgba(214, 109, 215, 0.98)
+}
+
+.ability-detail {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(7, 11, 17, 0.96);
+  font-size: 0.9rem;
+  color: #d0d4dc;
+  min-height: 76px;
+}
+
+/* Memories */
+
+.memory-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 10px;
+}
+
+.memory-card {
+  background: rgba(7, 11, 17, 0.96);
+  border-radius: 12px;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.88rem;
+  color: #c8cfda;
+}
+
+.memory-card h3 {
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  margin-bottom: 4px;
+  color: #ffb3c5;
+}
+
+.memory-card img {
+  margin: 6px 0;
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* Letter */
+
+.letter {
+  font-size: 0.94rem;
+  line-height: 1.6;
+  color: #d0d4dc;
+  white-space: pre-line;
+}
+
+.letter-note {
+  margin-top: 6px;
+  font-size: 0.8rem;
+  color: #8e97a5;
+}
+
+@media (max-width: 800px) {
+  .main-grid {
+    grid-template-columns: 1fr;
+  }
+  .panel-agent,
+  .panel-abilities,
+  .panel-memories,
+  .panel-letter {
+    grid-column: 1 / 2;
+  }
+}
